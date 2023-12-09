@@ -1,0 +1,856 @@
+/* Import dei font*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #FFF;
+	font-family: "Montserrat", sans-serif;
+}
+
+/*------------------------------------------------------SCROLLBAR LATERALE ---------------------------------------------------*/
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #4BB377;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #004A86;
+}
+
+/*--------------------------------------------------HEADER _START-----------------------------------------------*/
+
+/* ------------------------------------- NAVBAR --------------------------------------------- */
+
+/* Ombra della navbar */
+.black {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+nav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	top: 0;
+	position: fixed;
+	display: flex;
+	width: 100%;
+	z-index: 1000;
+	background: #fff;
+	justify-content: space-between;
+	transition: 1.5s;
+	align-items: center;
+}
+
+
+/* Logo */
+.logo img {
+	width: 120px;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+/* Unordered List contenente gli elementi della navbar */
+nav ul {
+	display: flex;
+	align-items: center;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 5px 10px;
+}
+
+nav ul li a {
+	padding: 2px 10px;
+	color: #47506B;
+	cursor: pointer;
+	transition: .5s;
+	text-decoration: none;
+}
+
+/* Elemento indicato dal cursore - hover */
+nav ul li a:hover {
+	color: #fff;
+	border-radius: 5px;
+	background: rgba(0, 74, 134, 0.993)
+}
+
+/* Elemento attivo (home) */
+.active {
+	color: #fff;
+	border-radius: 5px;
+	background: rgba(0, 74, 134, 0.993);
+}
+
+.logout {
+	/*pulsante logout*/
+	margin-left: 50px;
+	padding: 5px 20px;
+	border: 2px solid rgba(255, 0, 0, 0.993);
+	border-radius: 20px;
+	text-decoration: none;
+	transition: .5s;
+	background-color: rgba(255, 0, 0, 0.993);
+	color: #fff;
+	cursor: pointer;
+}
+
+.logout:hover {
+	color: #47506B;
+	background: #fff;
+}
+
+/* Testo degli elementi non attivi della navbar */
+a,
+button {
+	float: left;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	color: #47506B;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* ------------------------------------- SIDE MENU --------------------------------------------- */
+
+.menu {
+	cursor: pointer;
+	width: 25px;
+	display: none;
+}
+
+/* Side menu (background ecc...) */
+.side-menu {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 74, 134, 0.993);
+	position: absolute;
+	top: 0;
+	transition: .8s;
+	z-index: 2000;
+	transform: translateX(-100%);
+}
+
+.side-menu ul {
+	margin-top: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.side-menu ul li {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Testo indicato dal cursore - hover */
+.side-menu ul li:hover a {
+	background: #fff;
+	color: rgba(0, 74, 134, 0.993);
+	;
+}
+
+.side-menu ul li a {
+	color: #FFF;
+	width: 100%;
+	font-size: 1em;
+	text-decoration: none;
+	padding: 15px 0px;
+}
+
+.close img {
+	float: right;
+	width: 35px;
+	cursor: pointer;
+	margin: 10px;
+}
+
+/* ------------------------------------- TITLE --------------------------------------------- */
+
+.title {
+	margin-top: 100px;
+	margin-left: 100px;
+	scroll-margin-top: 100px;
+}
+
+/* titolo */
+.title span {
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	font-size: 60px;
+	color: #004A86;
+}
+
+/* Sottotitolo*/
+.title .shortdesc {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #47506B;
+	margin-bottom: 50px;
+}
+
+#sub-info h4,
+#sub-info p {
+    display: inline;
+    vertical-align: top;
+}
+
+/* ------------------------------------- USR IMG --------------------------------------------- */
+
+.ccard_usrimg {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: right;
+	align-items: flex-start;
+	margin-top: -100px;
+	margin-bottom: -200px;
+}
+
+.profile-pic-div {
+	height: 200px;
+	width: 200px;
+	position: right;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+#photo {
+	height: 100%;
+	width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: #4BB377;
+    line-height: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Freccia per tornare su */
+.go-top {
+	position: fixed;
+	width: 3rem;
+	height: 3rem;
+	background: #fff;
+	bottom: 2rem;
+	right: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	color: #004A86;
+	border-radius: 50%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+}
+
+/* ------------------------------------------------------------ MODALE _START ----------------------------------------------------------- */
+.title .mng-isc {
+	border: 0;
+	border-radius: 8px;
+	padding: 10px 10px;
+	background: #F0A30A;
+	color: white;
+	cursor: pointer;
+	margin-top: -40px;
+	display: inline;
+}
+
+.title .mng-txt {
+	border: 0;
+	border-radius: 8px;
+	padding: 10px 10px;
+	background: #F0A30A;
+	color: white;
+	cursor: pointer;
+	margin-top: 10px;
+	display: inline;
+}
+
+
+@keyframes background-in{
+	0% {scale: 0 0.005;}
+	33% {scale: 1 0.005;}
+	66%,100% {scale: 1 1;}
+}
+
+@keyframes modal-in{
+	0%, 66% {
+		opacity: 0;
+		visibility: hidden;
+		translate: -50% -30%;
+	}
+	100%{
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.modal-background{
+	position : fixed;
+	top: 0;
+	left: 0;
+	transform: scale(1,1);
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s;
+}
+
+body.open .modal-background{
+	opacity: 1;
+	visibility: visible;
+	animation: background-in 1s both;
+}
+
+.modal{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	width: 700px;
+	padding: 48px 40px;
+	border-radius: 12px;
+	background: #f2f2f2;
+	color: #47506B;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s;
+	font-family: "Montserrat", sans-serif;;
+}
+
+body.open .modal{
+	opacity: 1;
+	visibility: visible;
+	animation: modal-in 1s;
+	z-index: 1;
+}
+body.closed .modal{
+	opacity: 0;
+	visibility: hidden;
+	translate: -50px -50px;
+}
+
+.modal input[type=checkbox] + label {
+	display: block;
+	margin: 0.2em;
+	cursor: pointer;
+	padding: 0.2em;
+}
+
+.modal input[type=checkbox] {
+display: none;
+}
+
+.modal input[type=checkbox] + label:before {
+content: "\2714";
+border: 1px solid #000;
+border-radius: 0.2em;
+display: inline-block;
+width: 1em;
+height: 1em;
+padding-left: 0.2em;
+padding-bottom: 0.3em;
+margin-right: 0.2em;
+vertical-align: bottom;
+color: transparent;
+transition: .2s;
+}
+
+.modal .modal input[type=checkbox] + label:active:before {
+transform: scale(0);
+}
+
+.modal input[type=checkbox]:checked + label:before {
+background-color: #4BB377;
+border-color: #4BB377;
+color: #000;
+}
+
+.modal input[type=checkbox]:disabled + label:before {
+transform: scale(1);
+border-color: #aaa;
+}
+
+.modal input[type=checkbox]:checked:disabled + label:before {
+transform: scale(1);
+background-color: #bfb;
+border-color: #bfb;
+}
+
+.modal .accept-button {
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	background: #4BB377;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: .5s;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
+.modal .decline-button {
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	background: #FF0000;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: .5s;
+	margin-top: 20px;
+}
+
+.liststud {
+	margin-top: 20px;
+}
+
+.modal .form-group.select-all label{
+	margin-bottom: 20px;
+}
+
+#button-closemodal {
+	color: white;
+	background-color: red;
+	font-size: x-large;
+	font-weight: bold;
+	border-radius: 100%;
+	margin-left: 85%;
+    margin-top: -1%;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+	cursor: pointer;
+}
+/*-----------------------------modale 1------------------------------------*/
+.modal-background1{
+	position : fixed;
+	top: 0;
+	left: 0;
+	transform: scale(1,1);
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s;
+}
+
+body.open1 .modal-background1{
+	opacity: 1;
+	visibility: visible;
+	animation: background-in 1s both;
+}
+
+.modal1{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	width: 700px;
+	padding: 48px 40px;
+	padding-top: 80px;
+	border-radius: 12px;
+	background: #f2f2f2;
+	color: #47506B;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s;
+	font-family: "Montserrat", sans-serif;
+}
+
+body.open1 .modal1{
+	opacity: 1;
+	visibility: visible;
+	animation: modal-in 1s;
+	z-index: 1;
+	margin-top: 37.5px;
+}
+body.closed1 .modal1{
+	opacity: 0;
+	visibility: hidden;
+	translate: -50px -50px;
+}
+#button-closemodal2 {
+	color: white;
+	background-color: red;
+	font-size: x-large;
+	font-weight: bold;
+	border-radius: 100%;
+	margin-left: 85%;
+    margin-top: -8%;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+	cursor: pointer;
+}
+/*------------------------------modale 1 end -----------------------------------*/
+
+/* --------------------------------modale form  ------------------------------ */
+form {
+	width: 100%;
+	border-radius: 20px;
+	background: #fff;
+	margin-top: -30px;
+	padding: 10px;
+}
+
+.form-inner {
+padding: 15px;
+}
+
+.form-inner input,
+.form-inner textarea {
+display: block;
+width: 100%;
+padding: 15px;
+margin-bottom: 10px;
+border: none;
+border-radius: 20px;
+background: #d0dfe8;
+}
+
+.form-inner textarea {
+resize: none;
+}
+
+#form_course {
+	background: linear-gradient(to right, #4BB377, #004A86);
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border-radius: 20px;
+	border: none;
+	font-size: 15px;
+	font-weight: 400;
+	color: #fff;
+	margin-top: 40px;
+	cursor: pointer;
+}
+
+input, textarea {
+	outline: none;
+}
+
+h3 {
+	margin-top: 0;
+	font-weight: 700;
+}
+
+input[type=file]{
+	display: none;
+}
+
+#upload_img_lbl{
+	display: inline-block;
+	background: #4BB377;
+	text-align: center;
+	padding: 10px;
+	font-size: 15px;
+	letter-spacing: 1.5px;
+	user-select: none;
+	cursor: pointer;
+	color: #fff;
+	border-radius: 20px;
+	margin-left: 30%;
+
+}
+
+/* --------------------------modale form end  --------------------------- */
+
+/* ------------------------------------------------------------- MODALE _END ----------------------------------------------------------- */
+
+
+
+/*--------------------------------------------------HEADER(navbar, title, side-menu) _END-----------------------------------------------*/
+
+/*--------------------------------------------------SEZIONE INFO _START-----------------------------------------------*/
+
+
+.ccard_text{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-top: 150px;
+}
+
+p, h4 {
+	text-align: justify;
+	font-size: 15px;
+}
+
+/* ------------------------------------- COURSE GOALS --------------------------------------------- */
+
+.inbt {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+	color: #004A86;
+	margin: 100px;
+	margin-bottom: 20px;
+	scroll-margin-top: 80px;
+}
+
+.inbt span{
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	font-size: 40px;
+	color: #004A86;
+}
+
+.inbt .shortdesc2 {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #47506B;
+	margin-bottom: 10px;
+}
+
+/* ------------------------------------- BRIEF DESCRIPTION --------------------------------------------- */
+
+
+.head-container {
+	margin-top: -80px;
+	margin-bottom: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	font-family: "Montserrat", sans-serif;
+	max-width: 100%;
+}
+
+.container {
+	position: relative;
+	max-width: auto;
+	max-height: auto;
+	width: fit-content;
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+	background: linear-gradient(to right, #4BB377, #004A86);
+	align-items:center;
+	margin-top: -20px;
+	margin-bottom: 50px;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.container img{ /*immagine a fianco*/
+	border-radius: 8px;
+	width: 700px;
+	height: 350px;
+}
+
+
+/* ------------------------------------- LEARNING VERIFICATION --------------------------------------------- */
+
+.inbt_end {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+	color: #004A86;
+	margin: 100px;
+	margin-bottom: 50px;
+	margin-top: -20px;
+	scroll-margin-top: 80px;
+}
+
+/* Titolo principale sezione corsi */
+.inbt_end span{
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	font-size: 40px;
+	color: #004A86;
+}
+
+/* Sottotitolo sezione corsi */
+.inbt_end .shortdesc2 {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #47506B;
+	margin-bottom: 10px;
+}
+
+
+
+/*-------------------------------------------------------------FOOTER _START----------------------------------------------------------*/
+
+footer {
+	color: #E5E8EF;
+	background: #000D;
+	padding: 50px 0;
+}
+
+footer .footer-container {
+	max-width: 1300px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+footer .footer-container .foot {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+}
+
+/*-------------------------------------------------------------FOOTER _END----------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------Sezione per Responsive Website _START--------------------------------------------*/
+
+@media screen and (max-width: 960px) {
+	.footer-container {
+		max-width: 600px;
+	}
+
+	.right-col {
+		width: 100%;
+		margin-bottom: 60px;
+	}
+
+	.left-col {
+		width: 100%;
+		text-align: center;
+	}
+
+	.social-media {
+		display: flex;
+		justify-content: center;
+	}
+
+	.menu {
+		display: block;
+	}
+
+	.logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+
+	nav ul,
+	.logout {
+		display: none;
+	}
+}
+
+
+
+@media screen and (max-width: 1200px) {
+	.ccard_usrimg {
+		display: none;
+	}
+	.ccard_text{
+		margin-top: 100px;
+	}
+}
+
+
+
+@media screen and (max-width: 1000px) {
+	.nav ul,
+	.nav .search {
+		display: none;
+	}
+
+	.go-top {
+		display: none;
+	}
+
+	.logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+
+	.nav ul li {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+
+	.nav .switch-tab {
+		visibility: visible;
+	}
+
+	.nav .check-box {
+		visibility: visible;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	footer .btn {
+		margin: 0;
+		width: 100%;
+		margin-top: 20px;
+	}
+	.container img {
+		width: 100%;
+		/* align-self: center; */
+	}
+	.container {
+		width: 75%;
+		/* align-self: center; */
+	}
+}
+
+
+
+
+/*-------------------------------------------------Sezione per Responsive Website _END--------------------------------------------*/

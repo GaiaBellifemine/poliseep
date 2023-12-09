@@ -1,0 +1,868 @@
+/* Import dei font*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background: #FFF;
+	font-family: "Montserrat", sans-serif;
+}
+
+/*------------------------------------------------------SCROLLBAR LATERALE ---------------------------------------------------*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4BB377;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #004A86;
+}
+
+/* Navbar */
+nav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	top: 0;
+	position: fixed;
+	display: flex;
+	width: 100%;
+	z-index: 1000;
+	background: #fff;
+	justify-content: space-between;
+	transition: 1.5s;
+	align-items: center;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo img{
+	width: 120px;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+/* Unordered List contenente gli elementi della navbar */
+nav ul {
+	display: flex;
+	align-items: center;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 5px 10px;
+}
+
+nav ul li a {
+	padding: 2px 10px;
+	color: #47506B;
+	cursor: pointer;
+	transition: .5s;
+	text-decoration: none;
+}
+
+/* Elemento indicato dal cursore - hover */
+nav ul li a:hover {
+	color: #fff;
+	border-radius: 5px;
+	background:rgba(0, 74, 134, 0.993)
+}
+
+/* Elemento attivo (home) */
+.active {
+	color: #fff;
+	border-radius: 5px;
+	background: rgba(0, 74, 134, 0.993);
+}
+
+.logout { /*pulsante logout*/
+	margin-left: 50px;
+	padding: 5px 20px;
+	border: 2px solid rgba(255, 0, 0, 0.993);
+	border-radius: 20px;
+	text-decoration: none;
+	transition: .5s;
+	background-color: rgba(255, 0, 0, 0.993);
+	color: #fff;
+	cursor: pointer; 
+}
+.logout:hover {
+	color: #47506B;
+	background: #fff;
+}
+
+/* Testo degli elementi non attivi della navbar */
+a, button {
+	float: left;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	color: #47506B;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* ------------------------------------- SIDE MENU --------------------------------------------- */
+
+.menu {
+	cursor: pointer;
+	width: 25px;
+	display: none;
+}
+
+/* Side menu (background ecc...) */
+.side-menu {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 74, 134, 0.993);
+	position: absolute;
+	top: 0;
+	transition: .8s;
+	z-index: 2000;
+	transform: translateX(-100%);
+}
+
+.side-menu ul {
+	margin-top: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.side-menu ul li {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Testo indicato dal cursore - hover */
+.side-menu ul li:hover a{
+	background: #fff;
+	color: rgba(0, 74, 134, 0.993);;
+}
+
+.side-menu ul li a{
+	color: #FFF;
+	width: 100%;
+	font-size: 1em;
+	text-decoration: none;
+	padding: 15px 0px;
+}
+
+.close img{
+	float: right;
+	width: 35px;
+	cursor: pointer;
+	margin: 10px;
+}
+
+
+
+/* ------------------------------------- Pannello laterale sinistro --------------------------------------------- */
+.panel {
+	display: inline-flex;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+}
+
+/* Container dei singoli moduli*/
+.left-side {
+	background: #FFF;
+	height: 100%;
+	width: 25%;
+	display: block;
+	justify-content: center;
+	box-shadow: inset 0 0 20px rgba(0,0,0,0.7),0 0 30px rgba(0,0,0,0.5);
+	overflow: hidden;
+}
+
+.left-side ul {
+	margin: 50px;
+	margin-top: 150px;
+}
+.left-side li {
+	list-style-type: none;
+	cursor: pointer;
+	color: #004A86;
+	font-weight: 700;
+	font-size: 1.2em;
+	margin-bottom: 20px;
+	display: flex;
+}
+.left-side li:hover {
+	color: #000;
+	font-size: 1.5em;
+	font-weight: 900;
+	transition: .3s ease-in-out;
+}
+.left-side li .new-quiz p{
+	margin-left: 30px; 
+    font-size: smaller;
+    background-color: #4bb377; 
+    color: white;
+    border-radius: 5px; 
+    padding: 3px;
+}
+
+/*Pulsante nuovo quiz*/
+.button-container{
+	display: flex;
+	justify-content: center;
+}
+
+.accept-button {
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	background: #4BB377;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: .5s;
+}
+
+
+/* -------------------------- QUIZ - Nuova implementazione (pannello destro) --------------------------------- */
+/*VISUALIZZAZIONE DI DEFAULT*/
+.inbt {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+	color: #004A86;
+	margin: 100px;
+	margin-bottom: 50px;
+	scroll-margin-top: 80px;
+	display: block;
+}
+
+.inbt span{
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	font-size: 40px;
+	color: #004A86;
+}
+
+.inbt .shortdesc2 {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #47506B;
+	margin-bottom: 10px;
+}
+
+.container_img {
+	max-width: auto;
+	max-height: auto;
+	width: fit-content;
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+	background: linear-gradient(to right, #4BB377, #004A86);
+	align-items:center;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	position: inherit;
+}
+
+.container_img img{
+	border-radius: 8px;
+	width: 700px;
+	height: 350px;
+}
+
+.quiz-side {
+	background: #fff;
+	height: 100%;
+	width: 75%;
+	display: none;
+	overflow: scroll;
+}
+
+#newquiz h1{
+	padding-bottom: 30px;
+    padding-top: 100px;
+    text-align: center;
+	background-color: lightskyblue;
+}
+
+/*CREAZIONE NUOVO QUIZ (pannello destro)*/
+.newquiz-header{
+	text-align: center;
+	background: lightcyan;
+	color: #000;
+	padding: 30px;
+}
+
+.principalinfo p {
+	text-align: initial;
+	padding-top: 4px;
+	padding-bottom: 8px;
+
+}
+
+.first2 {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-style: dashed;
+	border-radius: 10px;
+	border-width: 1.5px;
+	margin-bottom: 20px;
+}
+
+.principalinfo .last {
+	padding-bottom: 20px;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-style: dashed;
+	border-radius: 10px;
+	border-width: 1.5px;
+}
+
+.first2 .wrapper{
+	display: flex;
+	align-items: center;
+}
+
+.first2 p{
+	padding-right: 20px;
+}
+
+.first2 #chapterquiz{
+	border-radius: 5px;
+    box-shadow: inset 0 0 5px lightgrey;
+    border: 1px solid rgba(0,0,0,0.2);
+	padding: 15px;
+}
+
+.principalinfo .textarea{
+	border-radius: 5px;
+    box-shadow: inset 0 0 5px lightgrey;
+    border: 1px solid rgba(0,0,0,0.2);
+	padding: 15px;
+	min-width: 300px;
+	max-width: 100%;
+}
+
+.principalinfo .textarea:focus{
+	box-shadow: inset 0 0 10px rgb(224, 255, 131);
+}
+
+.principalinfo #chapterquiz:focus{
+	box-shadow: inset 0 0 10px rgb(224, 255, 131);
+}
+
+.principalinfo #descriptionquiz{
+	min-width: 100%;
+}
+
+.newquestions{
+	margin-top: 30px;
+}
+
+.newquestions section{
+	text-align: center;
+    background: lemonchiffon;
+    color: #000;
+    padding: 30px;
+    border-top-color: black;
+    border-top-style: solid;
+}
+
+.newquestions h2{
+	margin-top: -45px;
+    text-align: left;
+    margin-bottom: 20px;
+    border-color: black;
+    border-style: groove;
+    border-radius: 10px;
+    padding-left: 10px;
+    max-width: fit-content;
+    padding-right: 10px;
+    background-color: white;
+}
+
+.newquestions p {
+	text-align: initial;
+	padding-top: 4px;
+	padding-bottom: 8px;
+
+}
+
+.newquestions .textarea{
+	border-radius: 5px;
+    box-shadow: inset 0 0 5px lightgrey;
+    border: 1px solid rgba(0,0,0,0.2);
+	padding: 15px;
+	min-width: 300px;
+	max-width: 100%;
+}
+
+.newquestions .textarea:focus{
+	box-shadow: inset 0 0 10px #0a5ef06e;
+}
+
+.newquestions #questiontype{
+	border-radius: 5px;
+    box-shadow: inset 0 0 5px lightgrey;
+    border: 1px solid rgba(0,0,0,0.2);
+	padding: 15px;
+}
+
+.newquestions #questiontype:focus{
+	box-shadow: inset 0 0 10px #0a5ef06e;
+}
+
+#saq{
+	padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: dashed;
+    border-radius: 10px;
+    border-width: 1.5px;
+    margin-bottom: 20px;
+	display: none;
+}
+
+#maq{
+	padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: dashed;
+    border-radius: 10px;
+    border-width: 1.5px;
+    margin-bottom: 20px;
+	display: none;
+}
+
+#oq{
+	padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: dashed;
+    border-radius: 10px;
+    border-width: 1.5px;
+    margin-bottom: 20px;
+	display: none;
+}
+
+.answers .wrapper{
+	display: flex;
+	align-items: center;
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+.answers p {
+	text-align: initial;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	padding-right: 20px;
+}
+
+.newquestions #nanswerssaq{
+	border-radius: 5px;
+    box-shadow: inset 0 0 5px lightgrey;
+    border: 1px solid rgba(0,0,0,0.2);
+	padding: 15px;
+}
+
+.newquestions #nanswersmaq{
+	border-radius: 5px;
+    box-shadow: inset 0 0 5px lightgrey;
+    border: 1px solid rgba(0,0,0,0.2);
+	padding: 15px;
+}
+
+.newquestions #nanswerssaq:focus{
+	box-shadow: inset 0 0 10px #0a5ef06e;
+}
+
+.newquestions #nanswersmaq:focus{
+	box-shadow: inset 0 0 10px #0a5ef06e;
+}
+
+.vanswers{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: fit-content;
+}
+
+.vanswers .textarea{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+
+.explainopen .textarea{
+	min-width: 100%;
+}
+
+.button-container .addQuestion{
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	background: #004A86;
+	color: rgb(255, 254, 254);
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: .5s;
+	margin-top: -17px;
+	align-items: center;
+}
+
+#removeQuestion{
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	background: #B62C35;
+	color: rgb(255, 254, 254);
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: .5s;
+	margin-top: -50px;
+	margin-bottom: 25px;
+	align-items: center;
+}
+
+.button-container .confirm{
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	background: #4BB377;
+	color: rgb(255, 254, 254);
+	font-size: 20px;
+	border-radius: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: .5s;
+	margin-top: 20px;
+}
+
+
+/*VISUALIZZAZIONE QUIZ ESISTENTE (DEVE MODIFICARE GIULIA)*/
+.quiz-header{
+	text-align: center;
+	background: #F0A30A;
+	color: #000;
+	padding: 50px;
+	margin-top: 70px;
+}
+
+.container{
+	max-width: 700px;
+	margin: auto;
+	padding: 20px;
+}
+
+section{
+	border: 2px solid #F0A30A;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+label{
+	display: block;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+label:hover{
+	background: #F0A30A;
+}
+
+/* domanda a risposta aperta errata */
+.open_wrong_section{
+	border: 2px solid #F0A30A;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 0;
+	background-color: white;
+}
+
+.open_wrong_label{
+	display: block;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+.open_wrong_label:hover{
+	background: #B62C35;
+}
+
+/* domanda a risposta aperta corretta */
+.open_right_section{
+	border: 2px solid #4BB377;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #4BB377;
+}
+
+.open_right_label{
+	display: block;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+.open_right_label:hover{
+	background: #4BB377;
+}
+
+/* domanda errata (multipla/singola) */
+.wrong_section{
+	border: 2px solid #F0A30A;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.wrong_label{
+	display: block;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+	margin-top: 10px;
+	background: white;
+}
+.wrong_label:hover{
+	background: #B62C35;
+}
+
+/* domanda corretta (multipla/singola) */
+.right_section{
+	border: 2px solid #4BB377;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.right_label{
+	display: block;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+	margin-top: 10px;
+	background: #4BB377;
+}
+.right_label:hover{
+	background: #4BB377;
+}
+
+/* domanda neutrale (multipla/singola) */
+.neutral_label{
+	display: block;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+	margin-top: 10px;
+	background: #fff;
+}
+.neutral_label:hover{
+	background: #fff;
+}
+
+.decline-button {
+	padding: 6px 12px;
+	outline: none;
+	border: none;
+	background: #F0A30A;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	white-space: nowrap;
+	border: 2px solid rgba(240, 163, 10, 0.993);
+	transition: .3s;
+	margin-left: 240px;
+}
+
+.decline-button:hover {
+	background-color: #f2f2f2;
+	color: #47506B;
+}
+
+textarea{
+  width:100%;
+}
+
+/* -------------------------- Pannello laterale destro (Google Form container) - OLD --------------------------------- */
+.right-side {
+	background: #fff;
+	height: 100%;
+	width: 75%;
+	display: block;
+}
+.left-side ul {
+	margin: 50px;
+	margin-top: 150px;
+}
+.left-side li {
+	list-style-type: none;
+	cursor: pointer;
+	color: #004A86;
+	font-weight: 700;
+	font-size: 1.2em;
+	margin-bottom: 20px;
+}
+.left-side li:hover {
+	color: #000;
+	font-size: 1.5em;
+	font-weight: 900;
+	transition: .3s ease-in-out;
+}
+
+#quiz-container {
+	margin-top: 80px;
+	width: 100%;
+	height: 100%;
+}
+
+.quiz-frame {
+	width: 100%;
+	height: 95vh;
+	border: none;
+}
+
+.main-frame {
+	background: url(../images/quiz_/quiz.jpeg);
+	background-size: contain;
+	background-position:top;
+	margin-top: -10px;
+}
+
+
+/*-------------------------------------------------------------FOOTER _START----------------------------------------------------------*/
+
+footer {
+	color: #E5E8EF;
+	background: #000D;
+	padding: 50px 0;
+}
+
+footer .footer-container {
+	max-width: 1300px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+footer .footer-container .foot {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+}
+
+/*-------------------------------------------------------------FOOTER _END----------------------------------------------------------*/
+
+
+/*-------------------------------------------------Sezione per Responsive Website _START--------------------------------------------*/
+
+@media screen and (max-width: 960px) {
+	.menu {
+		display: block;
+	}
+	.logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+	nav ul, .logout{
+		display: none;
+	}
+}
+
+
+@media screen and (max-width: 1000px) {
+	.nav ul, .nav {
+		display: none;
+	}
+	.go-top {
+		display: none;
+	}
+	.logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+	.nav ul li{
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.nav .switch-tab {
+		visibility: visible;
+	}
+	.nav .check-box {
+		visibility: visible;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.container_img img {
+		width: 500px;
+		height: 250px;
+		/* align-self: center; */
+	}
+}
+
+@media screen and (max-width: 840px) {
+	.container_img img {
+		width: 300px;
+		height: 150px;
+		/* align-self: center; */
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.container_img img {
+		width: 220px;
+		height: 120px;
+		/* align-self: center; */
+	}
+}
+
+/*-------------------------------------------------Sezione per Responsive Website _END--------------------------------------------*/
+

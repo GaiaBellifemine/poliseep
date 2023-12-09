@@ -1,0 +1,581 @@
+/* Import dei font*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background: #FFF;
+	font-family: "Montserrat", sans-serif;
+}
+
+/*------------------------------------------------------SCROLLBAR LATERALE ---------------------------------------------------*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4BB377;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #004A86;
+}
+
+/* Navbar */
+nav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	top: 0;
+	position: fixed;
+	display: flex;
+	width: 100%;
+	z-index: 1000;
+	background: #fff;
+	justify-content: space-between;
+	transition: 1.5s;
+	align-items: center;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo img{
+	width: 120px;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+/* Unordered List contenente gli elementi della navbar */
+nav ul {
+	display: flex;
+	align-items: center;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 5px 10px;
+}
+
+nav ul li a {
+	padding: 2px 10px;
+	color: #47506B;
+	cursor: pointer;
+	transition: .5s;
+	text-decoration: none;
+}
+
+/* Elemento indicato dal cursore - hover */
+nav ul li a:hover {
+	color: #fff;
+	border-radius: 5px;
+	background:rgba(0, 74, 134, 0.993)
+}
+
+/* Elemento attivo (home) */
+.active {
+	color: #fff;
+	border-radius: 5px;
+	background: rgba(0, 74, 134, 0.993);
+}
+
+.logout { /*pulsante logout*/
+	margin-left: 50px;
+	padding: 5px 20px;
+	border: 2px solid rgba(255, 0, 0, 0.993);
+	border-radius: 20px;
+	text-decoration: none;
+	transition: .5s;
+	background-color: rgba(255, 0, 0, 0.993);
+	color: #fff;
+	cursor: pointer;
+}
+.logout:hover {
+	color: #47506B;
+	background: #fff;
+}
+
+/* Testo degli elementi non attivi della navbar */
+a, button {
+	float: left;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	color: #47506B;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* ------------------------------------- SIDE MENU --------------------------------------------- */
+
+.menu {
+	cursor: pointer;
+	width: 25px;
+	display: none;
+}
+
+/* Side menu (background ecc...) */
+.side-menu {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 74, 134, 0.993);
+	position: absolute;
+	top: 0;
+	transition: .8s;
+	z-index: 2000;
+	transform: translateX(-100%);
+}
+
+.side-menu ul {
+	margin-top: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.side-menu ul li {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Testo indicato dal cursore - hover */
+.side-menu ul li:hover a{
+	background: #fff;
+	color: rgba(0, 74, 134, 0.993);;
+}
+
+.side-menu ul li a{
+	color: #FFF;
+	width: 100%;
+	font-size: 1em;
+	text-decoration: none;
+	padding: 15px 0px;
+}
+
+.close img{
+	float: right;
+	width: 35px;
+	cursor: pointer;
+	margin: 10px;
+}
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.panel {
+	display: inline-flex;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+}
+
+/* ------------------------------------- Pannello laterale sinistro (lista chat)--------------------------------------------- */
+.left-side {
+	background: #FFF;
+	height: 100%;
+	width: 25%;
+	display: block;
+	justify-content: center;
+	box-shadow: inset 0 0 20px rgba(0,0,0,0.7),0 0 30px rgba(0,0,0,0.5);
+}
+.users{
+	padding: 25px 30px;
+	padding-top: 98.5px;
+}
+
+.users header,
+.users-list a{
+	display:flex;
+	align-items: center;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	justify-content: space-between;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.left-side img{
+    height: 55px;
+    width: 55px;
+    margin: 0 15px;
+}
+
+:is(.users, .users-list) .content{
+	display: flex;
+	align-items: center;
+}
+
+.users header .content img{
+	height: 50px;
+	width:50px;
+	margin: 0 15px;
+}
+
+:is(.users, .users-list) .details{
+	margin-left: 5px;
+	color:#000;
+	text-align: left;
+}
+
+:is(.users, .users-list) .details  span{
+	font-size: 17px;
+	font-weight: 500;
+}
+.users .search{
+	margin: 20px 0;
+	margin-top: 13px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.users .search .text{
+	font-size:  18px;
+}
+.users .search input{
+	position: absolute;
+	height: 42px;
+	width: calc(100% - 50px);
+	border: 1px solid #ccc;
+	padding: 0 13px;
+	font-size: 16px;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+}
+.users .search button{
+	width: 47px;
+	height: 42px;
+	border:none;
+	outline: none;
+	color:#fff;
+	background:#333;
+	cursor: pointer;
+	font-size: 17px;
+	border-radius: 0 5px 5px 0;
+}
+
+.users-list{
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+.users-list a{
+	padding-right: 5px;
+	width: 90%;
+	border-bottom-color: #f1f1f1;
+}
+
+.users-list a:last-child{
+	border: none;
+	margin-bottom: 0px;
+}
+
+.users-list a .content img{
+	height: 40px;
+	width: 40px;
+}
+
+/*
+
+
+.users-list a .new-messages p{
+	background: #004a86;
+	font-size: x-small;
+	color: #fff;
+	border-radius: 100% 100% 100% 100%;
+	height: 22px;
+	width: 22px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+*/
+
+.users-list a .new-messages{
+	margin-left: 2%;
+}
+
+.left-side .new-messages p{
+	margin-left: 30px;
+    font-size: smaller;
+    background-color: #4bb377;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.users-list a .content p{
+	color:#67676a;
+	font-size: small;
+}
+
+/* -------------------------- Pannello laterale destro (schermata iniziale) --------------------------------- */
+
+.inbt {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+	color: #004A86;
+	margin: 100px;
+	margin-bottom: 50px;
+	scroll-margin-top: 80px;
+	display: block;
+}
+
+.inbt span{
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	font-size: 40px;
+	color: #004A86;
+}
+
+.inbt .shortdesc2 {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #47506B;
+	margin-bottom: 10px;
+}
+
+.container_img {
+	max-width: auto;
+	max-height: auto;
+	width: fit-content;
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+	background: linear-gradient(to right, #4BB377, #004A86);
+	align-items:center;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	position: inherit;
+}
+
+.container_img img{
+	border-radius: 8px;
+	width: 700px;
+	height: 350px;
+}
+
+/* -------------------------- Pannello laterale destro (chat singola) --------------------------------- */
+.right-side {
+	background: #fff;
+	height: 100%;
+	width: 75%;
+	display: none;
+}
+
+.chat-area {
+	padding-top: 73.5px;
+	width: 100%;
+	height: 100%;
+}
+
+/*INTESTAZIONE DELLA CHAT*/
+.chat-area #firstpart {
+    display: flex;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+.chat-area #firstpart img{
+    height: 55px;
+    width: 55px;
+    margin: 0 15px;
+}
+
+.chat-area #firstpart .details span{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+/*CORPO DELLA CHAT*/
+.chat-box{
+    position: relative;
+    min-height: 69%;
+    max-height: 69%;
+    overflow-y: auto;
+    padding: 10px 30px 20px 30px;
+    background: #f7f7f7;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+                inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+
+.chat-box .chat{
+	margin: 15px 0;
+}
+
+.chat-box .chat p{
+	word-wrap: break-word;
+	padding: 8px 16px;
+	box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+				0rem 16px 16px -16px rgb(0 0 0 / 10%);
+}
+
+.chat-box .outgoing{
+	display: flex;
+}
+
+.chat-box .outgoing .details{
+	margin-left: auto;
+	max-width: calc(100% - 130px);
+}
+
+.outgoing .details p{
+	background: #004a86;
+	color: #fff;
+	border-radius: 18px 18px 0 18px;
+}
+
+.chat-box .incoming{
+	display: flex;
+	align-items: flex-end;
+}
+
+.chat-box .incoming img{
+	height: 35px;
+	width: 35px;
+}
+
+.chat-box .incoming .details{
+	margin-right: auto;
+	margin-left: 10px;
+	max-width: calc(100% - 130px);
+}
+
+.incoming .details p{
+	background: #36825e;
+	color: #fff;
+	border-radius: 18px 18px 18px 0;
+}
+
+
+/*SCRITTURA MESSAGGIO*/
+.typing-area{
+	padding: 18px 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.typing-area input{
+	height: 45px;
+	width: calc(100% - 58px);
+	font-size: 16px;
+	padding: 0 13px;
+	border: 1px solid #e6e6e6;
+	outline: none;
+	border-radius: 5px 0 0 5px;
+}
+
+.typing-area .send{
+	color: #fff;
+	width: 55px;
+	border: none;
+	outline: none;
+	background: #333;
+	font-size: 19px;
+	cursor: pointer;
+	opacity: 0.7;
+	/*pointer-events: none;*/
+	border-radius: 0 5px 5px 0;
+	transition: all 0.3s ease;
+}
+
+.typing-area .attachments{
+	color: #333;
+	width: 55px;
+	border: none;
+	outline: none;
+	background-color: #FFF;
+	font-size: 19px;
+	cursor: pointer;
+	opacity: 0.7;
+	/*pointer-events: none;*/
+	transition: all 0.3s ease;
+}
+
+.typing-area .send.active{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.typing-area .attachments.active{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+
+/*-------------------------------------------------Sezione per Responsive Website _START--------------------------------------------*/
+@media screen and (max-width: 960px) {
+	.menu {
+		display: block;
+	}
+	.logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+	nav ul, .logout{
+		display: none;
+	}
+}
+
+
+@media screen and (max-width: 1000px) {
+	.nav ul, .nav {
+		display: none;
+	}
+	.go-top {
+		display: none;
+	}
+	.logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+	.nav ul li{
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.nav .switch-tab {
+		visibility: visible;
+	}
+	.nav .check-box {
+		visibility: visible;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.container_img img {
+		width: 500px;
+		height: 250px;
+		/* align-self: center; */
+	}
+}
+
+@media screen and (max-width: 840px) {
+	.container_img img {
+		width: 300px;
+		height: 150px;
+		/* align-self: center; */
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.container_img img {
+		width: 220px;
+		height: 120px;
+		/* align-self: center; */
+	}
+}
+
+/*-------------------------------------------------Sezione per Responsive Website _END--------------------------------------------*/
+

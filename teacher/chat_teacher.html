@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="shortcut icon" type="png" href="../images/icon_/favicon.png">
+	<title>Chat page</title>
+	<link rel="stylesheet" type="text/css" href="chat_teacher.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../script.js"></script>
+	<script type="module" src="../script/chat_teacher.js"></script>
+</head>
+
+<body>
+
+	<!-- NAVIGATION -->
+
+	<!----------------------------------------------------HEADER (navbar, title, side-menu)--------------------------------------------->
+	<header id="header">
+
+		<!-- Navigation Bar -->
+		<nav>
+            <a href="teacher.html"><div class="logo"><img src="../images/logo.png" alt="logo"></div></a>
+            <ul>
+				<li><a id="href_courses" href="courses_teacher.html">Info</a></li>
+				<li><a id="href_file" href="files_teacher.html">Files</a></li>
+				<li><a id="href_quiz" href="quiz_teacher.html">Quiz</a></li>
+				<li><a class="active" href="#chat">Chat</a></li>
+            </ul>
+            <a class="logout" onclick="logout()">Logout</a>
+            <img src="../images/icon_/menu.png" class="menu" onclick="sideMenu(0)" alt="menu"> <!--menu a scomparsa-->
+        </nav>
+
+		<!-- side-menu (appare quando si rimpicciolisce la finestra) -->
+		<div class="side-menu" id="side-menu">
+			<div class="close" onclick="sideMenu(1)"><img src="../images/icon_/close.png" alt=""></div>
+			<ul>
+				<li><a id="url_info" href="courses_teacher.html">Info</a></li>
+				<li><a id="url_file" href="files_teacher.html">Files</a></li>
+				<li><a id="url_quiz" href="quiz_teacher.html">Quiz</a></li>
+				<li><a class="active" href="#chat">Chat</a></li>
+				<li><a onclick="logout()" style="background-color: red; cursor: pointer;">Logout</a></li>
+			</ul>
+		</div>
+
+	</header>
+
+
+	<!-- Sezione chat -->
+
+	<div class="panel" id="panel">
+		<div class="left-side" id="left">
+			<!--QUI CI VA LA LISTA DELLE VARIE CHAT SULLA SX-->
+			<section class="users">
+				<div class="search">
+					<span class="text"></span>
+					<!--Gestione ricerca chat js all'interno di script.js-->
+					<input type="text" id="searchInput" placeholder="Enter name to search...">
+					<button id="searchBTN"><i class="fas fa-search"></i></button>
+				</div>
+				<div class="users-list" id="users-list">
+					<!--Lista studenti con cui il docente ha chat-->
+				</div>
+			</section>
+	    </div>
+
+		<!-- sezione iniziale di benvenuto -->
+		<div class="inbt" id="noquiz">
+			<span>Chat page</span>
+			<div class="shortdesc2">
+				<br>
+				<p>Here you can find the messages sent by your students.</p><br>
+				<p>You can select one of the chats on the left to reply!</p>
+			</div>
+
+			<!--immagine-->
+			<div class="container_img">
+				<img src="../images/chat_/chat.png" alt="svg">
+			</div>
+		</div>
+
+		<div class="right-side" id="right">
+            <!--QUI CI VA LA CHAT SULLA DX-->
+            <section class="chat-area">
+
+				<!--Intestazione IMMAGINE, NOME-COGNOME, ACTIVENOW -->
+			    <div id="firstpart">
+
+			    </div>
+
+               <!--Chat-->
+               <div class="chat-box" id="chat-box">
+
+					<!--Messaggi inviati-->
+
+					<!--Messaggi ricevuti-->
+
+               </div>
+
+			   <!--Form per scrivere il messaggio-->
+			   <form action="#" class="typing-area" onsubmit="return false;">
+					<input type="text" class="input-field" id="message_box" placeholder="Type a message here..." autocomplete="off" name="messaggio">
+					<input type="file" id="uploadFile" style="display:none"/>
+					<button class="attachments" id="attachments" onclick="sendAttachments();"><i class="fa-solid fa-paperclip"></i></button>
+					<button class="send" id="send_btn"><i class="fa-solid fa-paper-plane"></i></button>
+			   </form>
+
+            </section>
+		</div>
+	</div>
+
+</body>
+</html>

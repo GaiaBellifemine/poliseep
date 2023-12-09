@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+		<title>Course page</title>
+		<meta name="desciption" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="courses_student.css">
+		<link rel="shortcut icon" type="png" href="../images/icon_/favicon.png">
+		<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+		<script type="text/javascript" src="../script.js"></script>
+		<script type="module" src="../script/courses_student.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+		<script> // script per la gestione dell'ombra nera della navbar
+			$(window).on('scroll', function () {
+				if ($(window).scrollTop()) {
+					$('nav').addClass('black');
+				} else {
+					$('nav').removeClass('black');
+				}
+			})
+		</script>
+	</head>
+
+	<body>
+
+		<!----------------------------------------------------HEADER (navbar, title, side-menu)--------------------------------------------->
+		<header id="header">
+
+			<!-- Navigation Bar -->
+			<nav>
+				<a href="student.html"><div class="logo"><img src="../images/logo.png" alt="logo"></div></a>
+				<ul>
+					<li><a class="active" href="#info">Info</a></li>
+					<li><a id="href_file" href="files_student.html">Files</a></li>
+					<li><a id="href_quiz" href="quiz_student.html">Quiz</a></li>
+					<li><a id="href_chat" href="chat_student.html">Chat</a></li>
+				</ul>
+				<a class="logout" onclick="logout()">Logout</a>
+				<img src="../images/icon_/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+				<!--menu a scomparsa-->
+			</nav>
+
+			<!-- Title -->
+
+			<div class='title' id='info'>
+						<span id="course_name"></span>
+						<div class='shortdesc' id='sub-info'>
+							<h4>CFU: </h4>
+							<p id="cfu"></p><br><br>
+							<h4>Professor: </h4>
+							<p id="professor"></p>
+						</div>
+					</div>
+			
+			<!-- Immagine di profilo -->
+			<main class="ccard_usrimg">
+				<div class="profile-pic-div">
+					<img src="../images/student_/usrimg.png" id="photo">
+					<input type="file" id="file">
+				</div>
+			</main>
+
+			<!-- side-menu (appare quando si rimpicciolisce la finestra) -->
+			<div class="side-menu" id="side-menu">
+				<div class="close" onclick="sideMenu(1)"><img src="../images/icon_/close.png" alt=""></div>
+				<ul>
+					<li><a class="active" href="#info">Info</a></li>
+					<li><a id="url_file" href="files_student.html">Files</a></li>
+					<li><a id="url_quiz" href="quiz_student.html">Quiz</a></li>
+					<li><a id="url_chat" href="chat_student.html">Chat</a></li>
+					<li><a onclick="logout()" style="background-color: red; cursor: pointer;">Logout</a></li>
+				</ul>
+			</div>
+
+			<!-- Freccia per tornare su -->
+			<a href="#" class="go-top"><i class="fas fa-arrow-up"></i></a>
+
+		</header>
+
+		<!-- Container principale contenente le tre sezioni di Info -->
+		<main class="ccard_text">
+
+			<!-- Goals -->
+			<div class="inbt">
+				<span>Course Goals</span>
+				<div class='shortdesc2'>
+							<p id="course_goals"></p><br>
+						</div>
+			</div>
+
+			<!-- Description -->
+			<div class="head-container">
+				<div class="inbt">
+					<span>Brief description of the course</span>
+					<div class='shortdesc2'>
+							<p id="course_desc"></p><br>
+					</div>
+				</div>
+
+				<!--immagine-->
+
+				<div class='container'>
+					<img id="img_url" src='' alt='svg'>
+				</div>
+			</div>
+
+
+			<!-- Verification -->
+			<div class="inbt_end">
+				<span>Learning Verification</span>
+				<div class='shortdesc2'>
+						<p id="learning_verification"></p>
+					</div>
+			</div>
+
+		</main>
+
+		<!-----------------------------------------------------------FOOTER----------------------------------------------------------->
+		<footer>
+			<div class="footer-container">
+				<div class="foot">
+					<p>Copyright © 2022<br>Created By PoliSEEP Team<br>All Rights Reserved.</p>
+					<p><img src="../images/icon_/location.png"> Politecnico di Bari, via Edoardo Orabona, 4, 70126 Bari BA</p>
+					<p><img src="../images/icon_/phone.png"> 345 1122333<br>
+						<a href="mailto:poliseepteam@gmail.com" style="color: #E5E8EF;"><img src="../images/icon_/mail.png">&nbsp;
+						poliseepteam@gmail.com</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+
+	</body>
+
+</html>

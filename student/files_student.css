@@ -1,0 +1,510 @@
+/* Import dei font*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #FFF;
+	font-family: "Montserrat", sans-serif;
+}
+
+/*------------------------------------------------------SCROLLBAR LATERALE + TO-DO LIST---------------------------------------------------*/
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #4BB377;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #004A86;
+}
+
+/*--------------------------------------------------HEADER _START-----------------------------------------------*/
+
+/* ------------------------------------- NAVBAR --------------------------------------------- */
+
+/* Ombra della navbar */
+.black {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+.mynav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	top: 0;
+	position: fixed;
+	display: flex;
+	width: 100%;
+	z-index: 1000;
+	background: #fff;
+	justify-content: space-between;
+	transition: 1.5s;
+	align-items: center;
+}
+
+
+/* Logo */
+.mynav .logo img {
+	width: 120px;
+	cursor: pointer;
+	transition: all 1s;
+	margin-top: -18px;
+}
+
+/* Unordered List contenente gli elementi della navbar */
+.mynav ul {
+	display: flex;
+	align-items: center;
+}
+
+.mynav ul li {
+	list-style: none;
+	margin: 5px 10px;
+}
+
+.mynav ul li a {
+	font-size: 16px;
+	padding: 2px 10px;
+	color: #47506B;
+	cursor: pointer;
+	transition: .5s;
+	text-decoration: none;
+	margin-top: -1px;
+}
+
+/* Elemento indicato dal cursore - hover */
+.mynav ul li a:hover {
+	font-size: 16px;
+	color: #fff;
+	border-radius: 5px;
+	background: rgba(0, 74, 134, 0.993)
+}
+
+/* Elemento attivo (home) */
+.mynav .active {
+	font-size: 16px;
+	color: #fff;
+	border-radius: 5px;
+	background: rgba(0, 74, 134, 0.993);
+}
+
+.mynav .logout {
+	/*pulsante logout*/
+	margin-left: 50px;
+	padding: 4px 20px;
+	border: 2px solid rgba(255, 0, 0, 0.993);
+	border-radius: 20px;
+	text-decoration: none;
+	transition: .5s;
+	background-color: rgba(255, 0, 0, 0.993);
+	color: #fff;
+	font-size: 16px;
+	margin-top: -12px;
+	cursor: pointer;
+}
+
+.mynav .logout:hover {
+	color: #47506B;
+	background: #fff;
+	font-size: 16px;
+}
+
+/* Testo degli elementi non attivi della navbar */
+.mynav a, button {
+	float: left;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	color: #47506B;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* ------------------------------------- SIDE MENU --------------------------------------------- */
+
+.menu {
+	cursor: pointer;
+	width: 25px;
+	display: none;
+}
+
+/* Side menu (background ecc...) */
+.side-menu {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 74, 134, 0.993);
+	position: absolute;
+	top: 0;
+	transition: .8s;
+	z-index: 2000;
+	transform: translateX(-100%);
+}
+
+.side-menu ul {
+	margin-top: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.side-menu ul li {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+/* Testo indicato dal cursore - hover */
+.side-menu ul li:hover a {
+	background: #fff;
+	color: rgba(0, 74, 134, 0.993);
+	padding-left: 100%;
+	padding-right: 100%;
+}
+
+.side-menu ul li a {
+	color: #FFF;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 15px 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.close img {
+	float: right;
+	width: 35px;
+	cursor: pointer;
+	margin: 10px;
+}
+
+/* ------------------------------------- TITLE --------------------------------------------- */
+
+.title {
+	margin-top: 100px;
+	margin-left: 100px;
+	scroll-margin-top: 100px;
+}
+
+/* titolo */
+.title span {
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	font-size: 60px;
+	color: #004A86;
+}
+
+/* Sottotitolo*/
+.title .shortdesc {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #47506B;
+	margin-bottom: 50px;
+}
+
+#sub-info h4,
+#sub-info p {
+    display: inline;
+    vertical-align: top;
+}
+
+/* Logo */
+.logo img {
+	width: 120px;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+
+
+/*--------------------------------------------------SEZIONE INFO _START-----------------------------------------------*/
+
+
+.ccard_text{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-top: -50px;
+}
+
+p, h4 {
+	text-align: justify;
+	font-size: 15px;
+}
+
+/* ------------------------------------- COURSE GOALS --------------------------------------------- */
+
+.inbt {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+	color: #004A86;
+	margin: 100px;
+	margin-bottom: 20px;
+	scroll-margin-top: 80px;
+}
+
+.inbt span{
+	font-weight: 700;
+	font-family: "Montserrat", sans-serif;
+	font-size: 40px;
+	color: #004A86;
+}
+
+.inbt .shortdesc2 {
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 15px;
+	color: #47506B;
+	margin-bottom: 10px;
+}
+
+/* ------------------------------------- USR IMG --------------------------------------------- */
+
+.ccard_usrimg {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: right;
+	align-items: flex-start;
+	margin-top: -100px;
+	margin-bottom: -200px;
+}
+
+.profile-pic-div {
+	height: 200px;
+	width: 200px;
+	position: right;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+#photo {
+	height: 100%;
+	width: 100%;
+}
+
+
+/* Freccia per tornare su */
+.go-top {
+	position: fixed;
+	width: 5rem;
+	height: 5rem;
+	background: #fff;
+	bottom: 3rem;
+	right: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3.2rem;
+	color: #004A86;
+	border-radius: 50%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+}
+
+/*--------------------------------------------------HEADER(navbar, title, side-menu) _END-----------------------------------------------*/
+
+/*--------------------------------------------------TABELLA--------------------------------------------*/
+table.paleBlueRows {
+    margin-top: 20px;
+    margin-left: 105px;
+    margin-bottom: 50px;
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid #FFFFFF;
+    background-color: #4EE6EE;
+    width: 450px;
+    height: 250px;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  table.border-radius { border-radius: 10px; }
+
+  table.paleBlueRows td, table.paleBlueRows th {
+    border: 0px solid #FFFFFF;
+    padding: 5px 120px;
+  }
+  table.paleBlueRows tbody td {
+    font-size: 13px;
+  }
+  table.paleBlueRows tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table.paleBlueRows thead {
+    background: #0B6FA4;
+    border-bottom: 5px solid #FFFFFF;
+  }
+  table.paleBlueRows thead th {
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  table.paleBlueRows tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    color: #004A86;
+    background: #D0E4F5;
+    border-top: 3px solid #444444;
+  }
+  table.paleBlueRows tfoot td {
+    font-size: 14px;
+  }
+
+/*-------------------------------------------------------------FOOTER _START----------------------------------------------------------*/
+
+footer {
+	color: #E5E8EF;
+	background: #000D;
+	padding: 50px 0;
+}
+
+footer .footer-container {
+	max-width: 1300px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+footer .footer-container .foot {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+}
+
+/*-------------------------------------------------------------FOOTER _END----------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------Sezione per Responsive Website _START--------------------------------------------*/
+
+@media screen and (max-width: 960px) {
+	.footer-container {
+		max-width: 600px;
+	}
+
+	.right-col {
+		width: 100%;
+		margin-bottom: 60px;
+	}
+
+	.left-col {
+		width: 100%;
+		text-align: center;
+	}
+
+	.social-media {
+		display: flex;
+		justify-content: center;
+	}
+
+	.mynav .menu {
+		display: block;
+	}
+
+	.mynav .logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+
+	.mynav .ul,
+	.mynav .logout {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	footer .btn {
+		margin: 0;
+		width: 100%;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.ccard_usrimg {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+
+	.mynav ul,
+	.mynav .search {
+		display: none;
+	}
+
+	.go-top {
+		display: none;
+	}
+
+	.mynav .logo {
+		transition: 1s ease;
+		margin-left: 45%;
+		transform: scale(1.5);
+	}
+
+	.mynav ul li {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+
+	.mynav .switch-tab {
+		visibility: visible;
+	}
+
+	.mynav .check-box {
+		visibility: visible;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.container {
+		padding: 25px 10px;
+	}
+}
+
+
+@media screen and (max-width: 700px) {
+	footer .btn {
+		margin: 0;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	.svg-image img {
+		width: 90%;
+		margin: 20px;
+		/* align-self: center; */
+	}
+
+	.quote img {
+		width: 90%;
+		margin: 20px;
+		/* align-self: center; */
+	}
+}
+
+
+
+/*-------------------------------------------------Sezione per Responsive Website _END--------------------------------------------*/

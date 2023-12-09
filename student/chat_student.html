@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="shortcut icon" type="png" href="../images/icon_/favicon.png">
+	<title>Chat page</title>
+	<link rel="stylesheet" type="text/css" href="chat_student.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../script.js"></script>
+	<script type="module" src="../script/chat_student.js"></script>
+</head>
+
+<body>
+
+	<!-- NAVIGATION -->
+
+	<!----------------------------------------------------HEADER (navbar, title, side-menu)--------------------------------------------->
+	<header id="header">
+
+		<!-- Navigation Bar -->
+		<nav>
+            <a href="student.html"><div class="logo"><img src="../images/logo.png" alt="logo"></div></a>
+            <ul>
+                <li><a id="href_info" href="courses_student.html">Info</a></li>
+				<li><a id="href_file" href="files_student.html">Files</a></li>
+				<li><a id="href_quiz" href="quiz_student.html">Quiz</a></li>
+				<li><a class="active" href="#chat">Chat</a></li>
+            </ul>
+            <a class="logout" onclick="logout()">Logout</a>
+            <img src="../images/icon_/menu.png" class="menu" onclick="sideMenu(0)" alt="menu"> <!--menu a scomparsa-->
+        </nav>
+
+		<!-- side-menu (appare quando si rimpicciolisce la finestra) -->
+		<div class="side-menu" id="side-menu">
+			<div class="close" onclick="sideMenu(1)"><img src="../images/icon_/close.png" alt=""></div>
+			<ul>
+				<li><a id="url_info" href="courses_student.html">Info</a></li>
+				<li><a id="url_file" href="files_student.html">Files</a></li>
+				<li><a id="url_quiz" href="quiz_student.html">Quiz</a></li>
+				<li><a class="active" href="#chat">Chat</a></li>
+				<li><a onclick="logout()" style="background-color: red; cursor: pointer;">Logout</a></li>
+			</ul>
+		</div>
+
+	</header>
+
+
+	<!-- Sezione chat -->
+
+	<div class="panel" id="panel">
+		<!--<div class="left-side" id="left">
+			QUI CI VA LA LISTA DELLE VARIE CHAT SULLA SX-->
+			<!--<section class="users">
+				<div class="search">
+					<span class="text"></span>
+					<--Gestione ricerca js in script.js->
+					<input type="text" id="searchInput" placeholder="Enter name to search..." onkeydown="search(this)"> ->
+					<button id="searchBTN"><i class="fas fa-search"></i></button>
+				</div>-->
+				<!--
+				<div class="users-list" id="users-list">
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>1</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>2</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>10</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>1</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>1</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>1</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>1</p>
+						</div>
+					</a>
+					<a href="#">
+						<div class="content">
+							<img src="../images/student_/usrimg.png" alt="">
+							<div class="details">
+								<span>
+								Nome Cognome
+								</span>
+								<p>This is text message</p>
+							</div>
+						</div>
+						<div class="new-messages">
+							<p>1</p>
+						</div>
+					</a>
+				</div>
+			
+			</section>
+	    </div>-->
+
+
+
+
+
+		<div class="right-side" id="right">
+            <!--QUI CI VA LA CHAT SULLA DX-->
+            <section class="chat-area">
+
+				<!--Intestazione IMMAGINE, NOME-COGNOME, ACTIVENOW -->	
+			    <div id="firstpart">
+                    <img id="teacher_pic" src="" alt="">
+                    <div class="details">
+                        <span id="teacher_name"></span>
+                        <p></p>
+                    </div>
+			    </div>
+
+               <!--Chat--> 
+               <div id="chat-box" class="chat-box">
+
+					<!--Testo da visualizzare se la chat non è ancora stata avviata solo lato studente (GAIA)-->
+					<!--<div class="text">No messages are available. Once you send message they will appear here.</div>-->
+				
+					<!--Messaggi inviati-->	
+
+					<!--Messaggi ricevuti-->
+
+               </div>
+
+			   <!--Form per scrivere il messaggio-->
+			   <form action="#" class="typing-area" onsubmit="return false;">
+					<input type="text" id="message_box" class="input-field" placeholder="Type a message here..." autocomplete="off">
+					<input type="file" id="uploadFile" style="display:none"/>
+					<button class="attachments" id="attachments" onclick="sendAttachments();"><i class="fa-solid fa-paperclip"></i></button>	
+					<button class="send" type="button" id="send_btn"><i class="fa-solid fa-paper-plane"></i></button>	
+			   </form>
+
+            </section>
+		</div>
+	</div>
+</body>
+</html>

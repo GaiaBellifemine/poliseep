@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+	<title>PoliSEEP</title>
+	<meta name="desciption" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" type="png" href="images/icon_/favicon.png">
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script> // script per la gestione dell'ombra nera della navbar
+		$(window).on('scroll', function () {
+			if ($(window).scrollTop()) {
+				$('nav').addClass('black');
+			} else {
+				$('nav').removeClass('black');
+			}
+		})
+	</script>
+</head>
+
+<body>
+
+	<!--HEADER che contiene navbar, nead-container e side-menu-->
+	<header id="header">
+
+		<!-- Navigation Bar -->
+		<nav>
+			<div class="logo"><img src="images/logo.png" alt="logo"></div>
+			<ul>
+				<li><a class="active" href="">Home</a></li>
+				<li><a href="#about_section">About</a></li>
+				<li><a href="#services_section">Services</a></li>
+				<li><a href="#team_section">Team</a></li>
+				<li><a href="#contactus_section">Contact</a></li>
+			</ul>
+			<a class="get-started" href="./login/login.html">Get Started</a>
+			<img src="images/icon_/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+			<!--menu a scomparsa-->
+		</nav>
+
+		<!--head-container-->
+		<div class="head-container">
+			<!--logo + frasi-->
+			<div class="quote">
+				<img src="images/logo.png" alt="logo">
+				<h1>A smart Software Engineering Education Platform</h1>
+				<h4>For students and teachers.</h4>
+				<h5>Study and train for your exams, or provide teaching materials and tests to prepare your students.
+				</h5>
+			</div>
+			<!--immagine-->
+			<div class="svg-image">
+				<img src="images/index_/svg1.jpg" alt="svg">
+			</div>
+		</div>
+
+		<!--side-menu (appare quando si rimpicciolisce la finestra)-->
+		<div class="side-menu" id="side-menu">
+			<div class="close" onclick="sideMenu(1)"><img src="images/icon_/close.png" alt=""></div>
+			<ul>
+				<li><a href="#about_section">About</a></li>
+				<li><a href="#services_section">Services</a></li>
+				<li><a href="#team_section">Team</a></li>
+				<li><a href="#contactus_section">Contact</a></li>
+				<li><a href="./login/login.html" style="background-color: rgba(33, 182, 120, 0.993);">Get Started</a></li>
+			</ul>
+		</div>
+
+		<!-- Freccia per tornare su -->
+		<a href="#" class="go-top"><i class="fas fa-arrow-up"></i></a>
+
+	</header>
+
+
+	<!-- ABOUT -->
+	<div class="diffSection" id="about_section">
+		<!--titolo-->
+		<center id="about">
+			<p style="font-size: 50px; padding: 100px">About</p>
+		</center>
+		<!--contenuto-->
+		<div class="about-content">
+			<!--immagine-->
+			<div class="side-image">
+				<img class="sideImage" src="images/index_/about.webp">
+			</div>
+			<!--testo-->
+			<div class="side-text">
+				<h2>What do we do?</h2>
+				<p>
+					PoliSEEP is a platform designed for students and university professors.
+					It was mainly designed for STEM disciplines.<br>
+					There are two users who use our website:<br></p>
+				<ul>
+					<li><b>PROFESSORS</b>: they use PoliSEEP to quickly provide teaching material and to create quizzes
+						to be submitted to students.
+						All this is possible for every course the professor teaches.<br>
+					</li>
+					<li><b>STUDENTS</b>: they use PoliSEEP to access the teaching material of all the courses they are
+						enrolled in.
+						In addition, they can train with the quizzes made available by the teachers.<br>
+					</li>
+				</ul>
+				<p>Using HTML(HyperText Markup Language), CSS(Cascading Style Sheet), JavaScript, we
+					can make learning more easier and in a interesting way.</p>
+			</p>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- SERVICES -->
+	<div class="service-swipe">
+		<div class="diffSection" id="services_section">
+			<center>
+				<p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #2e3d49;">Services</p>
+			</center>
+		</div>
+
+
+		<div class="for-students-teachers">
+			<p style="font-size: 40px; padding: 20px; color: #2e3d49;">For Students:</p>
+		</div>
+
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/documents.png">
+				<p>Didactic material distributed by the teachers available 24 hours a day</p>
+			</div>
+		</a>
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/questions.png">
+				<p>Quizzes made available by the teacher</p>
+			</div>
+		</a>
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/dashboard.png">
+				<p>Dashboard of the courses you attend</p>
+			</div>
+		</a>
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/feedback2.png">
+				<p>Send feedback to your teacher</p>
+			</div>
+		</a>
+
+
+		<div class="for-students-teachers">
+			<p style="font-size: 40px; padding: 20px; color: #2e3d49;">For Professors:</p>
+		</div>
+
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/upload.webp">
+				<p>Distribution of didactic material to your students</p>
+			</div>
+		</a>
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/quiz.png">
+				<p>Creating quizzes for your students</p>
+			</div>
+		</a>
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/dashboard2.webp">
+				<p>Dashboard of the courses in which you teach</p>
+			</div>
+		</a>
+		<a href="login/login.html">
+			<div class="s-card"><img src="images/index_/Feedback.png">
+				<p>Get feedback from your students</p>
+			</div>
+		</a>
+	</div>
+
+
+	<!-- TEAM -->
+	<div class="diffSection" id="team_section">
+		<center>
+			<p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px;">We're the Creators</p>
+		</center>
+		<div class="totalcard">
+			<div class="card">
+				<center><img src="images/index_/PaoloAffuso.jpg"></center>
+				<center>
+					<div class="card-title">Paolo Affuso</div>
+					<div id="detail">
+						<a href="https://www.linkedin.com/in/paolo-affuso-8094561a6/" target="_blank"><button
+								class="btn-affuso">Follow +</button></a>
+					</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images/index_/RossielloNatale.jpeg"></center>
+				<center>
+					<div class="card-title">Natale Rossiello</div>
+					<div id="detail">
+						<div class="duty"></div>
+						<a href="https://www.linkedin.com/in/natale-rossiello-ab6531201/" target="_blank"><button
+								class="btn-rossiello">Follow +</button></a>
+					</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images/index_/VernoAntonio.jpg"></center>
+				<center>
+					<div class="card-title">Antonio Vernò</div>
+					<div id="detail">
+						<div class="duty"></div>
+						<a href="https://www.linkedin.com/in/antonio-vern%C3%B2-980067231/" target="_blank"><button
+								class="btn-verno">Follow +</button></a>
+					</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images/index_/AlbanoFrancesca.png"></center>
+				<center>
+					<div class="card-title">Francesca Albano</div>
+					<div id="detail">
+						<div class="duty"></div>
+						<a href="https://github.com/falbano99" target="_blank"><button
+								class="btn-albano">Follow +</button></a>
+					</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images/index_/LimongelliGiulia.png"></center>
+				<center>
+					<div class="card-title">Giulia Limongelli</div>
+					<div id="detail">
+						<div class="duty"></div>
+						<a href="https://github.com/giulialimo" target="_blank"><button
+								class="btn-limongelli">Follow +</button></a>
+					</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images/index_/BellifemineGaia.jpeg"></center>
+				<center>
+					<div class="card-title">Gaia Bellifemine</div>
+					<div id="detail">
+						<div class="duty"></div>
+						<a href="https://www.linkedin.com/in/gaia-bellifemine-294703199/" target="_blank"><button
+								class="btn-bellifemine">Follow +</button></a>
+					</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images/index_/MezzinaAlessandro.jpeg"></center>
+				<center>
+					<div class="card-title">Alessandro Mezzina</div>
+					<div id="detail">
+						<div class="duty"></div>
+						<a href="https://www.linkedin.com/in/alessandro-mezzina97/" target="_blank"><button
+								class="btn-mezzina">Follow +</button></a>
+					</div>
+				</center>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- CONTACT US -->
+	<div class="diffSection" id="contactus_section">
+		<center>
+			<p style="font-size: 50px; padding: 100px">Contact Us</p>
+		</center>
+		<div class="csec"></div>
+		<div class="back-contact">
+			<div class="cc">
+				<form action="mailto:poliseepteam@gmail.com" method="post" enctype="text/plain">
+					<label>First Name <span class="imp">*</span></label><label style="margin-left: 185px">Last Name
+						<span class="imp">*</span></label><br>
+					<center>
+						<input type="text" name="" style="margin-right: 10px; width: 175px" required="required"><input
+							type="text" name="lname" style="width: 175px" required="required"><br>
+					</center>
+					<label>Email <span class="imp">*</span></label><br>
+					<input type="email" name="mail" style="width: 100%" required="required"><br>
+					<label>Message <span class="imp">*</span></label><br>
+					<input type="text" name="message" style="width: 100%" required="required"><br>
+					<label>Additional Details</label><br>
+					<textarea name="addtional"></textarea><br>
+					<button type="submit" id="csubmit">Send Message</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="footer-container">
+			<div class="foot">
+				<p>Copyright © 2022<br>Created By PoliSEEP Team<br>All Rights Reserved.</p>
+				<p><img src="images/icon_/location.png"> Politecnico di Bari, via Edoardo Orabona, 4, 70126 Bari BA</p>
+				<p><img src="images/icon_/phone.png"> 345 1122333<br>
+					<a href="mailto:poliseepteam@gmail.com" style="color: #E5E8EF;"><img src="images/icon_/mail.png">&nbsp;
+					poliseepteam@gmail.com</a>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>

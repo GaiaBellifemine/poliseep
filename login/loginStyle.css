@@ -1,0 +1,329 @@
+/*--------------------------------------------------------TUTTE LE PAGINE-------------------------------------*/
+section.header{ /*HEADER SOTTO LA NAVBAR*/
+    padding: 0% !important;
+    margin-top: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+	/*background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url("../images/login_/img.jpg");*/
+    background-size: cover;
+	background-attachment: fixed;
+	display: flex;
+	justify-content: center;
+}
+
+/* ------------------------------------------------------- NAVBAR --------------------------------------------- */
+
+/* Ombra della navbar */
+.black {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+nav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	top: 0;
+	position: fixed;
+	display: flex;
+	width: 100%;
+	z-index: 1000;
+	background: #fff;
+	justify-content: space-between;
+	transition: 1.5s;
+	align-items: center;
+}
+
+/* Logo */
+.logo img{
+	width: 120px;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+/* Unordered List contenente gli elementi della navbar */
+nav ul {
+	display: flex;
+	align-items: center;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 5px 10px;
+}
+
+nav ul li a {
+	padding: 2px 5px;
+	color: #47506B;
+	cursor: pointer;
+	transition: .5s;
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------------SCROLLBAR-----------------------------------------------*/
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #4BB377;
+	border-radius: 5px;
+}
+/*----------------------------------------------------------------LOGIN E SIGNUP-----------------------------------------------------*/
+
+.form-container{ /*CONTAINER DEI FORM DI LOGIN E SIGNUP*/
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius:4px;
+    padding: 0px !important;
+    box-shadow: 0px 0px 10px 0px #004A86;
+    overflow: hidden;
+    margin-top: 70px;
+    background: white;
+}
+
+p{   /* PARAGRAFO TESTO "Please,select your role*/
+    text-align: left;
+}
+
+.form-container .forms{ /*FORM DI LOGIN + FORM SIGNUP INSIEME*/
+    display: flex;
+    align-items: center;
+    height: 540px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+.form-container .form{ /*FORM SINGOLO*/
+    width: 50%;   
+    padding: 30px;
+    transition: margin-left 0.18s ease;
+}
+
+/*TRANSIZIONI DA FORM DI LOGIN A SIGN UP E VICEVERSA*/
+.form-container.active .login{ 
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease; 
+}
+
+.form-container .signup{ 
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+
+.form-container.active .signup{ 
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.form-container.active .forms{ /*QUANDO E' ATTIVO IL FORM DI REGISTRAZIONE AUMENTA L'ALTEZZA DEL CONTAINER FORMS*/
+    height: 600px;
+    overflow: auto;
+}
+
+.form-container .form .formtype{ /*TITOLO DEL FORM*/
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+/*CAMPI DI INPUT DEI FORM (email, password, nome, studentID, conferma password, pulsante)*/
+.form .input-field{ /*CONTAINER DEI CAMPI DI INPUT*/
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input{ /*CAMPI DI INPUT (email, password, conferma password, nome, studentID,)*/
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){ /*CLICK SUI CAMPI DI INPUT*/
+    color: rgb(12, 2, 2);
+    border-bottom-color: #000000;
+}
+
+.input-field i{ /*ICONE DEI CAMPI DI INPUT*/
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(153, 153, 153);
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{ /*ICONE DEI CAMPI DI INPUT CLICCATI, SE CLICCO IL CAMPO DIVENTA CELESTE*/
+    color: #0d8af0;
+}
+
+.input-field i.icon{ /*ICONE DEI CAMPI DI INPUT A SX*/
+    left: 0;
+}
+
+.input-field i.showHidePw{ /*ICONE PASSWORD A DX*/
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .button{ /*CONTAINER PULSANTI LOGIN E SIGNUP*/
+    background-color: transparent;
+    margin-top: 35px;
+}
+
+.submitlogin{ /*PULSANTE LOGIN E SIGNUP*/
+    width: 70%;
+    border-radius: 50px;
+	box-shadow: 0px 0px 100px rgba(0,0,0,0.4);
+    font-size: 17px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: linear-gradient(to right, #4BB377, #004A86);
+    --bs-btn-font-weight: 650;
+    --bs-btn-color: white;
+    --bs-btn-bg: #000000;
+    --bs-btn-border-color: #004A86;
+    --bs-btn-hover-color: #004A86;
+    --bs-btn-hover-bg: #{shade-color(#ff00ff, 10%)};
+}
+
+/*REMEMBER ME E FORGOT PASSWORD*/
+.form .checkbox-text{ /*CONTAINER DI REMBEMBER ME E FORGOT PASSWORD*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;   
+}
+
+.checkbox-text .checkbox-content{ /*CONTAINER DI REMEMBER ME*/
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input{ /*CHECKBOX DI REMEMBER ME*/
+    margin: 0 8px -2px 4px;
+    accent-color: #0d8af0;
+}
+
+.form .text{ /*TEXT DEI FORM*/
+    color: rgb(4, 0, 0);
+    font-size: 14px;
+}
+
+.form a.text{ /*TEXT DEI LINK DEI FORM (a)*/
+    color: #0d8af0;
+    text-decoration: none;
+}
+
+.form a:hover{ /*HOVER SUI LINK DEI FORM (a)*/
+    text-decoration: underline;
+}
+/**/
+
+.form .login-signup{ /*CONTAINER DEL PASSAGGIO DA LOGIN A SIGN UP E VICEVERSA*/
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------- BANNER PRIVACY-------------------------------------*/
+.cookie-container {
+    background: white;
+    padding: 8px 32px;
+    position: fixed;
+    border-radius: 8px 8px 0 0;
+    bottom: 0;
+    left: 24px;
+    right: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    /*box-shadow: 2px -8px 18px #DF2771;*/
+    transition: 400ms;
+}
+
+.cookie-container p {
+    font-size: 18px;
+}
+  
+.cookie-container p a {
+    color: black;
+}
+  
+.cookie-container .accept {
+    border: 0;
+    padding: 16px 48px;
+    background: #27df80;
+    font-family: "Roboto", sans-serif;
+    margin: 16px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
+    float: right;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.cookie-container .reject {
+    border: 0;
+    padding: 16px 48px;
+    background: #cc0000;
+    font-family: "Roboto", sans-serif;
+    margin: 16px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
+    float: right;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+/**/  
+
+/*------------------------------------------------------PAGINA INFO (TERMINI E CONDIZIONI)-------------------------------------*/
+.btn_close{ /*PULSANTE CLOSE*/
+    width: 10%;
+    border-radius: 50px;
+	box-shadow: 0px 0px 100px rgba(0,0,0,0.4);
+    font-size: 17px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: linear-gradient(to right, #4BB377, #004A86);
+    --bs-btn-font-weight: 650;
+    --bs-btn-color: white;
+    --bs-btn-bg: #000000;
+    --bs-btn-border-color: #004A86;
+    --bs-btn-hover-color: #004A86;
+    --bs-btn-hover-bg: #{shade-color(#ff00ff, 10%)};
+}
+
+.buttonclosediv{ /*CONTENITORE PULSANTE CLOSE*/
+    text-align: center;
+}
+
+.p{
+    margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+	.btn_close{ /*PULSANTE CLOSE*/
+        padding-right: 60px;
+    }
+}

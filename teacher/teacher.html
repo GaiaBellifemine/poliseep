@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+		<title>Teacher page</title>
+		<meta name="desciption" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="teacher.css">
+		<link rel="shortcut icon" type="png" href="../images/icon_/favicon.png">
+		<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+		<script type="module" src="../firebaseConfig.js"></script>
+		<script type="text/javascript" src="../script.js"></script>
+		<script type="module" src="../script/teacher.js"></script>
+
+
+		<script> // script per la gestione dell'ombra nera della navbar
+			$(window).on('scroll', function(){
+				if($(window).scrollTop()){
+				$('nav').addClass('black');
+				}else {
+			$('nav').removeClass('black');
+			}
+			})
+		</script>
+	</head>
+
+	<body>
+
+		<!----------------------------------------------------HEADER (navbar, title, side-menu)--------------------------------------------->
+		<header id="header"></header>
+
+			<!-- Navigation Bar -->
+			<nav>
+				<a href=""><div class="logo"><img src="../images/logo.png" alt="logo"></div></a>
+				<ul>
+					<li><a class="active" href="#dashboard">Dashboard</a></li>
+					<li><a href="#sezione_corsi_disponibili">Courses</a></li>
+				</ul>
+				<a class="logout" onclick="logout()" style="cursor: pointer;">Logout</a>
+				<img src="../images/icon_/menu.png" class="menu" onclick="sideMenu(0)" alt="menu"> <!--menu a scomparsa-->
+			</nav>
+
+			<!-- Title -->
+			<div class="title" id="dash">
+				<span>Welcome back <span id="username"></span></span>
+				<div class="shortdesc">
+					<p>Here you find everything you need</p>
+				</div>
+			</div>
+
+			<!-- Immagine di profilo -->
+			<main class="ccard_usrimg">
+				<div class="profile-pic-div">
+					<img src="" id="photo">
+					<input type="file" id="file">
+					<label for="file" id="uploadBtn">Change Photo</label>
+				</div>
+				<script src="../script/user_img.js"></script>
+			</main>
+
+			<!-- side-menu (appare quando si rimpicciolisce la finestra) -->
+			<div class="side-menu" id="side-menu">
+				<div class="close" onclick="sideMenu(1)"><img src="../images/icon_/close.png" alt=""></div>
+				<ul>
+					<li><a class="active" href="#dashboard">Dashboard</a></li>
+					<li><a href="#sezione_corsi_disponibili">Courses</a></li>
+					<li><a onclick="logout()" style="background-color: red; cursor: pointer;">Logout</a></li>
+				</ul>
+			</div>
+
+			<!-- Freccia per tornare su -->
+			<a href="#" class="go-top"><i class="fas fa-arrow-up"></i></a>
+
+		</header>
+
+
+		<!-------------------------------------------------------------------DASHBOARD----------------------------------------------------->
+
+		<!-- Dashboard -->
+		<div class="inbt", id="dashboard">
+			<span>Dashboard</span>
+			<div class="shortdesc2">
+				<p>Here there are some statistics on your courses</p>
+			</div>
+		</div>
+		<main class="ccard_dash">
+
+			<!-- Overview -->
+			<section class="overview">
+				<div class="overview_container">
+					<div class="overview_sub">
+						<p id="topper_overview">Your courses</p>
+						<!--La classe di your_courses deve essere unica. Va fatto perché il css è stilizzato in base all'id-->
+						<p id="number" class="your_courses"></p>
+					</div>
+					<div class="overview_sub">
+						<p id="topper_overview">Enrolled students</p>
+						<!--La classe di enrolled students deve essere unica. Va fatto perché il css è stilizzato in base all'id-->
+						<p id="number" class="enrolled_students"></p>
+					</div>
+					<div class="overview_sub">
+						<p id="topper_overview">Loaded quiz</p>
+						<p id="number" class="loaded_quiz"></p>
+					</div>
+				</div>
+			</section>
+			<div class="chart">
+				<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+			</div>
+		</main>
+
+
+
+
+
+		<!-----------------------------------------------------------SEZIONE CORSI----------------------------------------------------------->
+
+		<!-- Sezione dei corsi disponibili -->
+		<div class="inbt", id="sezione_corsi_disponibili">
+			<span>Your Courses</span>
+			<div class="shortdesc2">
+				<p>Here you can manage your courses</p>
+			</div>
+			<div class="nuovo_corso">
+				<!-- Trigger/Open The Modal -->
+				<button onclick="toggleModal()" type="button" id="insert_course">Insert a new course</button>
+			</div>
+			<!-- Insieme dei corsi disponibili -->
+			<div class="ccard">
+				<center>
+					<div class="ccardbox" id="ccardbox">
+						<!--Qui sono contenuti i corsi del docente loggato-->
+					</div>
+				</center>
+			</div>
+
+
+			<!-- The Modal -->
+			<div class="modal-background" onclick="toggleModal()">
+			</div>
+			<!-- Modal content -->
+			<div class="modal" id="coursecreation">
+
+
+					<!-- FORM CREATE NEW COURSE -->
+
+					<!--<form action="#">-->
+						<div class="form-inner" id="course_modal">
+							<div id="error_div" style="color:red; text-align: center;"></div>
+							<p onclick="toggleModal()" id="button-closemodal">x</p>
+							<h3>Create a new course</h3>
+							<br>
+							<input type="text" placeholder="Course name" id="course_name">
+							<input type="number" min = "0" placeholder="CFU" id="cfu">
+							<input type="text" placeholder="Professor" id="professor">
+							<textarea placeholder="Course Goals" id="course_goals"></textarea>
+							<input type="number" min = "0" placeholder="Number of chapters" id="num_ch">
+							<textarea placeholder="Brief description of the course" id="brief_description"></textarea>
+							<input type="text" placeholder="Learning Verification" id="learning_verification">
+							<input type="file" id="upload_img_btn">
+							<label for="upload_img_btn" id="upload_img_lbl"><i class = "fa-solid fa-upload"></i> Choose course image</label>
+							<button type="submit" id="form_course">Create</button>
+						</div>
+					<!--</form>-->
+
+			</div>
+			<script type="text/javascript" src="../script/modale.js"></script>
+		</div>
+
+
+
+
+
+		<!-----------------------------------------------------------FOOTER----------------------------------------------------------->
+		<footer>
+			<div class="footer-container">
+				<div class="foot">
+					<p>Copyright © 2022<br>Created By PoliSEEP Team<br>All Rights Reserved.</p>
+					<p><img src="../images/icon_/location.png"> Politecnico di Bari, via Edoardo Orabona, 4, 70126 Bari BA</p>
+					<p><img src="../images/icon_/phone.png"> 345 1122333<br>
+						<a href="mailto:poliseepteam@gmail.com" style="color: #E5E8EF;"><img src="../images/icon_/mail.png">&nbsp;
+						poliseepteam@gmail.com</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

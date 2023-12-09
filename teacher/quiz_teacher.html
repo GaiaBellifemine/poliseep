@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="shortcut icon" type="png" href="../images/icon_/favicon.png">
+	<title>Quiz page</title>
+	<link rel="stylesheet" type="text/css" href="quiz_teacher.css">
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+	<script type="text/javascript" src="../script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../script/select_question_quiz_t.js"></script>
+	<script type="module" src="../script/quiz_teacher.js"></script>
+
+</head>
+
+<body>
+
+	<!-- NAVIGATION -->
+
+	<!----------------------------------------------------HEADER (navbar, title, side-menu)--------------------------------------------->
+	<header id="header">
+
+		<!-- Navigation Bar -->
+		<nav>
+			<a href="teacher.html">
+				<div class="logo"><img src="../images/logo.png" alt="logo"></div>
+			</a>
+			<ul>
+				<li><a id="href_info" href="courses_teacher.html">Info</a></li>
+				<li><a id="href_file" href="files_teacher.html">Files</a></li>
+				<li><a class="active" href="#quiz">Quiz</a></li>
+				<li><a id="href_chat" href="chat_teacher.html">Chat</a></li>
+			</ul>
+			<a class="logout" onclick="logout()">Logout</a>
+			<img src="../images/icon_/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+			<!--menu a scomparsa-->
+		</nav>
+
+		<!-- side-menu (appare quando si rimpicciolisce la finestra) -->
+		<div class="side-menu" id="side-menu">
+			<div class="close" onclick="sideMenu(1)"><img src="../images/icon_/close.png" alt=""></div>
+			<ul>
+				<li><a id="url_info" href="courses_teacher.html">Info</a></li>
+				<li><a id="url_file" href="files_teacher.html">Files</a></li>
+				<li><a class="active" href="#quiz">Quiz</a></li>
+				<li><a id="url_chat" href="chat_teacher.html">Chat</a></li>
+				<li><a onclick="logout()" style="background-color: red; cursor: pointer;">Logout</a></li>
+			</ul>
+		</div>
+
+	</header>
+
+	<!----------------------------------------------------SEZIONE QUIZ --------------------------------------------->
+
+	<div class="panel" id="panel">
+
+		<!-- pannello laterale (sx) -->
+		<div class="left-side" id="left">
+			<ul id="ul_left">
+				<!-- Lista quiz -->
+
+			</ul>
+			<div class="button-container">
+				<button
+					onclick="document.getElementById('newquiz').style.display='block'; document.getElementById('noquiz').style.display='none'; Array.from(document.querySelectorAll('[id=quiz3]')).forEach(function(val) {val.style.display = 'none';});"
+					class='accept-button' id='addButton'>Create a new Quiz</button></a>
+			</div>
+		</div>
+
+		<!-- sezione iniziale di benvenuto -->
+		<div class="inbt" id="noquiz">
+			<span>Quiz page</span>
+			<div class="shortdesc2">
+				<br>
+				<p>Here you can find the quizzes you created for this course.</p><br>
+				<p>You can create a new quiz or delete an existing one!</p>
+			</div>
+
+			<!--immagine-->
+			<div class="container_img">
+				<img src="../images/quiz_/quiz.jpeg" alt="svg">
+			</div>
+		</div>
+
+
+		<!--SEZIONE CREAZIONE QUIZ-->
+		<div class="quiz-side" id="newquiz">
+			<h1>Create a new quiz for this course</h1>
+
+			<!--Inserimento titolo e descrizione-->
+			<header class="newquiz-header">
+
+				<div class="principalinfo">
+					<div class="first2">
+						<div class="wrapper">
+							<p>Name of the quiz:</p>
+							<input type="text" class="textarea" placeholder="Enter the name of the quiz" name="namequiz"
+								id="namequiz" required>
+						</div>
+
+						<div class="wrapper">
+							<p>Number of the chapter of the quiz:</p>
+							<input type="number" min = "0" placeholder="chapter" id="chapterquiz">
+						</div>
+					</div>
+					<div class="last">
+						<p>Description of the quiz:</p>
+						<input type="text" class="textarea" placeholder="Enter the description of the quiz"
+							name="descriptionquiz" id="descriptionquiz" required>
+					</div>
+				</div>
+
+			</header>
+
+
+			<div class="newquestions" id="questions">
+
+				<div class="button-container">
+					<button class='addQuestion' id='addQuestion'><i class="uil uil-plus-circle"> New
+							Question</i></button>
+				</div>
+			</div>
+
+			<div class="button-container">
+				<button class='confirm' id='confirm'><i class="uil uil-check"> Confirm</i></button>
+			</div>
+
+		</div>
+
+		<!-- SEZIONE CHE DEVE MODIFICARE GIULIA PER LA VISUALIZZAZIONE quiz 3 - Javascript -->
+		<!-- Questa sezione va modificata onclick della barra laterale di sinistra-->
+		<div class="quiz-side" id="quiz3">
+			<header class="quiz-header">
+				<h1 id="quiz_name"></h1> <!---->
+				<p id="quiz_desc"></p>
+			</header><br><br>
+
+			<div class="container">
+				<!--QUI DENTRO CI VA LA VISUALIZZAZIONE DEL QUIZ + PULSANTE deleteQuiz-->
+			</div>
+		</div>
+
+
+	</div>
+
+	<script type="text/javascript" src="../script/insert_newQuiz.js"></script>
+
+</body>
+
+
+
+</html>
